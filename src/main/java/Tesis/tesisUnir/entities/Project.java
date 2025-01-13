@@ -1,12 +1,12 @@
 package Tesis.tesisUnir.entities;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
 @Entity
 @Data
-@Table(name = "project")
+@Table(name = "projects")
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -23,8 +23,4 @@ public class Project {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Program program;
-
-
-
-
 }

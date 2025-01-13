@@ -1,11 +1,12 @@
 package Tesis.tesisUnir.entities;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -26,8 +27,6 @@ public class User {
 
     private String rol;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST) // Agregado CascadeType.PERSIST
-    @JoinColumn(name = "program_id") // Asegura que el campo para el join sea el correcto
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private Program program;
-
 }
