@@ -15,5 +15,7 @@ public interface ProgramServices {
 
     Optional<Program> findById(String id);
 
+    Optional<Program> findByName(String name);
+
     void deleteById(String id);
 }

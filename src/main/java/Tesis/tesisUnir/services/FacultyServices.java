@@ -15,5 +15,7 @@ public interface FacultyServices {
 
     Optional<Faculty> findById(String id);
 
+    Optional<Faculty> findByName(String name);
+
     void deleteById(String id);
 }

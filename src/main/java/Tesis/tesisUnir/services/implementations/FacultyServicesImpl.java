@@ -47,6 +47,11 @@ public class FacultyServicesImpl implements FacultyServices {
     }
 
     @Override
+    public Optional<Faculty> findByName(String name) {
+        return facultiesRepository.findByName(name);
+    }
+
+    @Override
     public void deleteById(String id) {
         facultiesRepository.deleteById(id);
     }

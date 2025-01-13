@@ -3,6 +3,7 @@ package Tesis.tesisUnir.controllers;
 import Tesis.tesisUnir.entities.Faculty;
 import Tesis.tesisUnir.services.implementations.FacultyServicesImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +36,16 @@ public class FacultyController {
     @GetMapping("/{id}")
     public ResponseEntity<Faculty> findById(@PathVariable String id) {
         Optional<Faculty> data = facultyServices.findById(id);
+        if (data.isPresent()) {
+            return new ResponseEntity<>(data.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<Faculty> findByName(@Param("name") String name) {
+        Optional<Faculty> data = facultyServices.findByName(name.toLowerCase());
         if (data.isPresent()) {
             return new ResponseEntity<>(data.get(), HttpStatus.OK);
         } else {
