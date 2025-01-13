@@ -1,0 +1,14 @@
+services:
+  tests_unir:
+    container_name: unir_db
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: proyectos
+      MYSQL_USER: unir
+      MYSQL_PASSWORD: unirp4ssw0rd
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/var/lib/MYSQL_DATABASE
