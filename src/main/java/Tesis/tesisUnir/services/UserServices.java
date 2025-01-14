@@ -16,7 +16,7 @@ public interface UserServices {
 
     Optional<User> findByName(String name);
 
-    Optional<User> findByEmail(String email);
+    Optional<User> findByEmail(String correo);
 
     void deleteById(String id);
 }

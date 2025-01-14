@@ -1,0 +1,10 @@
+
+ˆ	java:S112("FDefine and throw a dedicated exception instead of using a generic one.(Ù¦½Ó8œÓóƒÆ2J$5cbf782d-30d9-41f5-91b9-edbcc1b664c3
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºâ±ËJ$9835de9a-4d0b-49d9-9621-20aeb1db8e9e
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$7680a9f8-54ab-4832-81f1-36a7b21b7252
+r	java:S106O"+Replace this use of System.out by a logger.(ÁÑê•ùÿÿÿÿ8ÎÄý¦Æ2J$9d76e7f3-af9c-49d4-b8b6-3fb282263a81
+m	java:S106P"+Replace this use of System.out by a logger.(ÌÁ¶ž8ÏÄý¦Æ2J$1e74c258-de2c-4929-ab07-9f02b86daf20
+m	java:S106Q"+Replace this use of System.out by a logger.(¦ÉÅõ8ÏÄý¦Æ2J$a22781b3-bcbb-48e3-a63b-1c542dfe5446
+a
+java:S1128	"Remove this duplicated import.(¼º¡Ú8â¸×ƒÆ2J$e7a84d79-b25f-464a-be83-95c95e5fbd94

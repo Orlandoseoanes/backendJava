@@ -1,0 +1,11 @@
+
+‹
+java:S1192G"HDefine a constant instead of duplicating this literal "message" 3 times.(ğ²Ä8§ğøÆ2J$88eacf8a-4cd6-47f7-ac05-7a5a4a87908e
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ı¯·Äÿÿÿÿÿ8Ğí¤Æ2J$3f287018-82ce-41cc-a721-7a45c05fd615
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8æí¤Æ2J$c1007587-5e58-4ee7-93fd-9c6d36f0f1e8
+…
+java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞ8çí¤Æ2J$bd3a4f32-1907-4bc1-91ae-c83bb0cbfebd
+n
+java:S1452?"&Remove usage of generic wildcard type.(ıì’àşÿÿÿÿ8˜”§Æ2J$cc8cf128-034f-4b9a-87bc-cdf60ef726d7
+m	java:S106@"+Replace this use of System.out by a logger.(ĞÔî©8ÁğøÆ2J$b7cb82cf-0f81-42e7-a819-7fe44de0be8b
