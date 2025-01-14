@@ -49,11 +49,6 @@ public class User {
         if (this.rol != null) {
             this.rol = this.rol.toLowerCase().trim();
         }
-
-        if (this.contrasena != null) {
-            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            this.contrasena = passwordEncoder.encode(this.contrasena);
-        }
     }
 }
 

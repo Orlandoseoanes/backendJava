@@ -4,23 +4,13 @@ import Tesis.tesisUnir.entities.Program;
 import Tesis.tesisUnir.entities.User;
 import Tesis.tesisUnir.services.implementations.ProgramServicesImpl;
 import Tesis.tesisUnir.services.implementations.UserServicesImpl;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-
-
-@Data
-class LoginRequest {
-    private String email;
-    private String contrasena;
-}
 
 
 @RestController
@@ -52,39 +42,20 @@ public class UserController {
         return new ResponseEntity<>(dataList, HttpStatus.OK);
     }
 
+    @GetMapping("/search/email")
+    public ResponseEntity<User> findByEmail(@RequestParam String email) {
+        Optional<User> user = userServices.findByEmail(email);
+        if (user.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(user.get());
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable String id) {
         userServices.deleteById(id);
         return ResponseEntity.noContent().build();
-    }
-
-
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest credentials) {
-        System.out.println("Iniciando sesión con: " + credentials);
-
-        boolean isAuthenticated = userServices.authenticateUser(credentials.getEmail(), credentials.getContrasena());
-
-        if (!isAuthenticated) {
-            return ResponseEntity
-                    .status(HttpStatus.UNAUTHORIZED)
-                    .body(Map.of("message", "Credenciales incorrectas"));
-        }
-
-        Optional<User> user = userServices.findByEmail(credentials.getEmail());
-
-        if (user.isEmpty()) {
-            return ResponseEntity
-                    .status(HttpStatus.UNAUTHORIZED)
-                    .body(Map.of("message", "Usuario no encontrado"));
-        }
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("message", "Inicio de sesión exitoso");
-        response.put("status", 200);
-        response.put("usuario", user.get());
-
-        return ResponseEntity.ok(response);
     }
 
 }

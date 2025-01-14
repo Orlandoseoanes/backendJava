@@ -62,28 +62,18 @@ public class UserServicesImpl implements UserServices {
     }
 
     @Override
+    public Optional<User> findByUsername(String username) {
+        return repository.findByUsername(username);
+    }
+
+    @Override
+    public Optional<User> findByDocument(String document) {
+        return repository.findByDocument(document);
+    }
+
+    @Override
     public void deleteById(String id) {
         repository.deleteById(id);
-    }
-
-
-
-    public boolean verifyPassword(String rawPassword, String encodedPassword) {
-        return passwordEncoder.matches(rawPassword, encodedPassword);
-    }
-
-    public boolean authenticateUser(String email, String password) {
-        Optional<User> user = findByEmail(email);
-        if (user.isPresent()) {
-            String storedPassword = user.get().getContrasena(); // Contraseña cifrada almacenada
-            System.out.println("Contraseña ingresada: " + password); // Contraseña texto plano
-            System.out.println("Contraseña almacenada: " + storedPassword);
-            System.out.println("¿Coinciden? " + passwordEncoder.matches(password, storedPassword));
-
-            // Comparar contraseña ingresada (texto plano) con la almacenada (cifrada)
-            return passwordEncoder.matches(password, storedPassword);
-        }
-        return false;
     }
 
 

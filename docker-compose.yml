@@ -9,6 +9,6 @@ services:
       MYSQL_USER: unir
       MYSQL_PASSWORD: unirp4ssw0rd
     ports:
-      - 3307:3306
+      - 3306:3306
     volumes:
       - ./db:/var/lib/MYSQL_DATABASE

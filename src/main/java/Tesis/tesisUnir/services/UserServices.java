@@ -18,5 +18,9 @@ public interface UserServices {
 
     Optional<User> findByEmail(String correo);
 
+    Optional<User> findByUsername(String usuario);
+
+    Optional<User> findByDocument(String cedula);
+
     void deleteById(String id);
 }

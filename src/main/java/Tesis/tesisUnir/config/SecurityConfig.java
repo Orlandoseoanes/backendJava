@@ -18,7 +18,6 @@ public class SecurityConfig {
                         auth.anyRequest().permitAll()
                 )
                 .httpBasic(basic -> {});
-
         return http.build();
     }
 }
